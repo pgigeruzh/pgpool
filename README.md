@@ -37,6 +37,9 @@ This repo contains a Dockerfile and an entrypoint. The entrypoint.sh configures 
    
    # enable auto failback
    auto_failback = on
+   
+   # number of connections
+   num_init_children = 1024
    ```
 
 Since entrypoint.sh is a bash script, it can't easily map Docker environmental variables to pgpool.conf. For this reason, tools such as "sed" can be useful to find and replace lines in a config file. For example:

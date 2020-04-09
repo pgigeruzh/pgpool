@@ -40,6 +40,9 @@ sed -i "/sr_check_password/c sr_check_password='$PASSWORD'" /etc/pgpool2/pgpool.
 # enable auto failback
 sed -i "/auto_failback/c auto_failback=on" /etc/pgpool2/pgpool.conf
 
+# increase number of connections
+sed -i "/num_init_children/c num_init_children=1024" /etc/pgpool2/pgpool.conf
+
 # delete  backends
 sed -i "/backend_hostname0/c #" /etc/pgpool2/pgpool.conf
 sed -i "/backend_port0/c #" /etc/pgpool2/pgpool.conf
